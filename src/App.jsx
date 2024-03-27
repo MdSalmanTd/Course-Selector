@@ -8,9 +8,9 @@ function App() {
 
   useEffect(() => {
     const fetchCourse = async () => {
-      const response = await fetch('http://localhost:8000/coursedetails');
+      const response = await fetch("https://mocki.io/v1/c7d701a9-1f0e-4c6e-b414-1cf94f2c9a59");
       const data = await response.json();
-      setcoursedetails(data);
+      setcoursedetails(data.coursedetails);
     }
 
     fetchCourse();
@@ -38,8 +38,6 @@ function App() {
     }
 
   };
-  
-  
   
 
 
