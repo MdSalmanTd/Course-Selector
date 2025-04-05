@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Data from './course.json';
 function App() {
   const [coursedetails, setcoursedetails] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
@@ -6,14 +7,17 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   // const originalCreditLimit = 20;
 
-  useEffect(() => {
-    const fetchCourse = async () => {
-      const response = await fetch("https://mocki.io/v1/c7d701a9-1f0e-4c6e-b414-1cf94f2c9a59");
-      const data = await response.json();
-      setcoursedetails(data.coursedetails);
-    }
+  // useEffect(() => {
+  //   const fetchCourse = async () => {
+  //     const response = await fetch("https://mocki.io/v1/c7d701a9-1f0e-4c6e-b414-1cf94f2c9a59");
+  //     const data = await response.json();
+  //     setcoursedetails(data.coursedetails);
+  //   }
 
-    fetchCourse();
+  //   fetchCourse();
+  // }, []);
+ useEffect(() => {
+    setcoursedetails(Data.coursedetails);
   }, []);
 
   const handleCourseSelection = (course) => {
